@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.page {
+  padding: 40px;
+  background-color: #f5f5f5;
+}
+
+header {
+  padding: 54px 0 72px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.page-header__path {
+  margin: 0;
+}
+
+.page-header__direction {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 16px;
+    padding-left: 24px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    color: #293553;
+}
+
+.page-header__date {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.date__input {
+    position: absolute;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.date__icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.date__selected {
+    font-size: 1em;
+    margin-left: 5px;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 22px 56px 22px 24px;
+    background-color: #ffffff;
+}
+
+.search__icon {
+    padding: 10px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.search__content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 100%;
+}
+
+.search__item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search__item:hover {
+    background-color: #f1f1f1;
+}
+
+.search.open .search__content {
+    display: block;
+}
+
+.search__button {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  background-color: #f5f5f5;
+}
+
+.search__input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.search-filters button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.direct-flights {
+  margin-right: 10px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+}
+
+.filters__checkbox {
+  background-color: #ffffff;
+  padding: 20px 22px 20px 24px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 4px;
+}
+
+.filters__button{
+  padding: 22px 24px;
+  background-color: #293553;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filters-panel {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Панель изначально скрыта за пределами экрана */
+    width: 300px;
+    height: 100%;
+    background-color: #f8f8f8;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.filters-panel.open {
+    right: 0; /* Отображение панели при открытии */
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
