@@ -5,19 +5,19 @@
     "isBestPrice": true,
     "duration": "4 ч 15 мин",
     "departure": {
-      "code": "LED",
-      "time": "14:40",
+      "code": "DME",
+      "time": "23:20",
       "date": "19 фев. пт."
     },
     "arrival": {
-      "code": "DME",
-      "time": "16:20",
-      "date": "19 фев. пт."
+      "code": "NSK",
+      "time": "07:35",
+      "date": "20 фев. пт."
     },
     "family": {
-      "luggage": "10кг",
-      "baggage": "20кг",
-      "return": "платно"
+      "luggage": "10 кг",
+      "baggage": "20 кг",
+      "return": "бесплатно"
     },
     "Price": 39985
   },
@@ -37,8 +37,8 @@
       "date": "19 фев. пт."
     },
     "family": {
-      "luggage": "10кг",
-      "baggage": "20кг",
+      "luggage": "10 кг",
+      "baggage": "20 кг",
       "return": "бесплатно"
     },
     "Price": 40657

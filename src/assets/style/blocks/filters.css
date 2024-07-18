@@ -4,36 +4,59 @@
 }
 
 .filters__checkbox {
+  display: flex;
+  justify-content: center;
   background-color: #ffffff;
-  padding: 20px 22px 20px 24px;
+  padding: 22px 22px 22px 42px;
   margin-right: 2px;
   margin-left: 2px;
   border-radius: 4px;
 }
 
 .filters__button {
-  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  min-width: 191px;
+  padding: 20px 24px;
+  color: #ffffff;
   background-color: #293553;
-  color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 .filters__panel {
-  position: fixed;
+  display: none;
+  position: absolute;
   top: 0;
-  right: -100%; /* Панель изначально скрыта за пределами экрана */
-  width: 300px;
-  height: 100%;
-  background-color: #f8f8f8;
+  right: 0;
+  bottom: 0;
+  left: 70%;
+  background-color: #293553;
+  color: #ffffff;
+  border: 1px solid #ddd;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  transition: right 0.3s ease;
-  z-index: 1000;
+  width: 100%;
+  z-index: 1;
+  margin: 0;
   padding: 20px;
+  list-style-type: none;
+}
+
+
+.filters__panel-label {
+  display: flex;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  margin-bottom: 26px;
 }
 
 .isPanelOpen {
-  right: 0; /* Отображение панели при открытии */
+  display: block;
 }
 
 .filters__close {
@@ -41,7 +64,8 @@
   border: none;
   font-size: 20px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 13px;
+  right: 72%;
   cursor: pointer;
+  z-index: 20;
 }
