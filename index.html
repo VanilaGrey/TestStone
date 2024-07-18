@@ -3,82 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Пример страницы</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>TestStone</title>
+    <link rel="stylesheet" href="src/assets/style/index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://cdn.jsdelivr.net/npm/vue@3/dist/vue.esm-browser.prod.js"
+        }
+      }
+    </script>
   </head>
   <body>
-
-    <div class="page">
-      <header class="page-header">
-        <h1 class="page-header__path">Туда</h1>
-        <div class="page-header__direction direction">
-          <span class="direction__from">Москва</span>
-          <span class="direction__to">Норильск</span>
-        </div>
-        <div class="page-header__date date">
-          <span class="date__icon">📅</span>
-          <input class="date__input" type="date" />
-          <span class="date__selected">5 февраля, пт</span>
-        </div>
-      </header>
-
-      <section class="page__filters filters">
-        <h2 class="Visually-hidden">Фильтры.</h2>
-        <div class="filters__search search">
-          <input type="text" class="search__input" placeholder="Авиакомпании" />
-          <button class="search__button">▼</button>
-          <ul class="search__content">
-            <li class="search__item">Аэрофлот</li>
-            <li class="search__item">S7 Airlines</li>
-            <li class="search__item">Уральские авиалинии</li>
-            <li class="search__item">Pobeda</li>
-            <li class="search__item">Россия</li>
-          </ul>
-        </div>
-        <label class="filters__checkbox">
-          <input type="checkbox" /> Прямые
-        </label>
-        <button class="filters__button" onclick="toggleFilters()">
-          Фильтры
-        </button>
-      </section>
-
-      <div id="filters-panel" class="filters-panel">
-        <label>
-          Фильтр <span>x</span> <input type="checkbox" /> Лучшая цена
-        </label>
-      </div>
-        <Card />
+    <div id="app" v-cloak>
+      <the-app></the-app>
     </div>
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="main.js" type="module"></script>
+    <script src="src/main.js" type="module"></script>
   </body>
-</html>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vue-import</title>
-  <script type="importmap">
-    {
-      "imports": {
-        "vue": "https://cdn.jsdelivr.net/npm/vue@3/dist/vue.esm-browser.prod.js",
-        "vue-import": "https://cdn.jsdelivr.net/npm/vue-import/dist/vue-import.esm-browser.js"
-      }
-    }
-  </script>
-</head>
-
-<body>
-  <div id="app" v-cloak>
-    <my-component></my-component>
-  </div>
-  <script src="https://unpkg.com/vue@next"></script>
-  <script src="main.js" type="module"></script>
-</body>
 </html>

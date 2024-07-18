@@ -1,0 +1,18 @@
+.date__input {
+	position: absolute;
+	opacity: 0;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.date__icon {
+	font-size: 1.5em;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.date__selected {
+	font-size: 1em;
+	margin-left: 5px;
+}

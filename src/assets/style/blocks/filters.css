@@ -1,0 +1,47 @@
+.filters {
+  display: flex;
+  align-items: center;
+}
+
+.filters__checkbox {
+  background-color: #ffffff;
+  padding: 20px 22px 20px 24px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 4px;
+}
+
+.filters__button {
+  padding: 22px 24px;
+  background-color: #293553;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filters__panel {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Панель изначально скрыта за пределами экрана */
+  width: 300px;
+  height: 100%;
+  background-color: #f8f8f8;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.isPanelOpen {
+  right: 0; /* Отображение панели при открытии */
+}
+
+.filters__close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "flightCompany": "NordStar",
+    "flightNumber": "Y7 101",
+    "isBestPrice": true,
+    "duration": "4 ч 15 мин",
+    "departure": {
+      "code": "LED",
+      "time": "14:40",
+      "date": "19 фев. пт."
+    },
+    "arrival": {
+      "code": "DME",
+      "time": "16:20",
+      "date": "19 фев. пт."
+    },
+    "family": {
+      "luggage": "10кг",
+      "baggage": "20кг",
+      "return": "платно"
+    },
+    "Price": 39985
+  },
+  {
+    "flightCompany": "NordStar",
+    "flightNumber": "Y7 102",
+    "isBestPrice": false,
+    "duration": "4 ч",
+    "departure": {
+      "code": "LED",
+      "time": "14:40",
+      "date": "19 фев. пт."
+    },
+    "arrival": {
+      "code": "DME",
+      "time": "16:20",
+      "date": "19 фев. пт."
+    },
+    "family": {
+      "luggage": "10кг",
+      "baggage": "20кг",
+      "return": "бесплатно"
+    },
+    "Price": 40657
+  },
+  {
+    "flightCompany": "NordStar",
+    "flightNumber": "Y7 103",
+    "isBestPrice": false,
+    "duration": "4 ч",
+    "departure": {
+      "code": "LED",
+      "time": "14:40",
+      "date": "19 фев. пт."
+    },
+    "arrival": {
+      "code": "DME",
+      "time": "16:20",
+      "date": "19 фев. пт."
+    },
+    "family": {
+      "luggage": "10кг",
+      "baggage": "20кг",
+      "return": "бесплатно"
+    },
+    "Price": 40657
+  }
+]
