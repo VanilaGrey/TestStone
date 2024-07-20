@@ -2,7 +2,9 @@ import { vueTemplate } from "./utils.js";
 
 export default {
   template: vueTemplate`
-    <section class="card">
+    <button @click="reset">Reset</button>
+    <TransitionGroup name="section" tag="section">
+      <section  class="card">
       <h3 class="visually-hidden">Карточка билета.</h3>
       <div class="card__inner">
         <div class="card__header">
@@ -50,6 +52,7 @@ export default {
         <p class="card__description">Туда и обратно, 1 взрослый</p>
       </div>
     </section>
+</TransitionGroup>
   `,
   props: {
     flightCompany: String,
