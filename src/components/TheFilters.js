@@ -18,58 +18,61 @@ export default {
         Прямые
       </ui-checkbox>
     </div>
-    <button class="filters__button " type="button" @click="openFilters">
+    <button class="filters__button" type="button" @click="openFilters">
       Фильтр
       <span class="icon-filters"></span>
     </button>
-    <div
-      class="filters__panel" 
-      :class="{
-      'animate__animated animate__bounceInRight': isPanelOpen,
-      'animate__animated animate__bounceOutRight': isPanelClosing
-    }"
-    @animationend="handleAnimationEnd"
-      @click.self="closeFilters"
+    <Transition
+      enter-active-class="animate__animated animate__fadeInRight"
+      leave-active-class="animate__animated animate__fadeOutRight"
     >
-      <div class="filters__panel-inner" >
-        <button
-          class="filters__close"
-          type="button"
-          @click="closeFilters" aria-label="Закрыть"> 
-           <span class="icon-close">
-           </span>
-        </button>
-        <p class="filters__panel-title">Фильтр</p>
-        <ui-checkbox
-          v-model="filters.bestPrice"
-          @update:model-value="toggleFilters"
-        >
-          Лучшая цена
-        </ui-checkbox>
+      <div v-if="openFilters"
+        class="filters__panel"
+        :class="{  'filters__panel--open': isPanelOpen,
+                  'filters__panel--close': isPanelClose }"
+        @click.self="closedFilters"
+      >
+        <div class="filters__panel-inner" v-if="openFilters">
+          <button
+            class="filters__close icon-close"
+            type="button"
+            @click="closedFilters" aria-label="Закрыть">
+          </button>
+          <p class="filters__panel-title">Фильтр</p>
+          <ui-checkbox
+            v-model="filters.bestPrice"
+            @update:model-value="toggleFilters"
+          > 
+            Лучшая цена
+          </ui-checkbox>
+        </div>
       </div>
-    </div>
+    </Transition>
   </form>
   `,
-  emits: ['filter'],
+  emits: ["filter"],
   data() {
     return {
       isPanelOpen: false,
+      isPanelClosed: true,
       filters: {
-        search: '',
+        search: "",
         oneWay: false,
-        bestPrice: false
+        bestPrice: false,
       },
     };
   },
   methods: {
     toggleFilters() {
-      this.$emit('filter', this.filters);
+      this.$emit("filter", this.filters);
     },
     openFilters() {
       this.isPanelOpen = true;
+      this.isPanelClosed = false;
     },
-    closeFilters() {
-      this.isPanelClosing = true;
+    closedFilters() {
+      this.isPanelClosed = true;
+      this.isPanelOpen = false;
     },
   },
 };
