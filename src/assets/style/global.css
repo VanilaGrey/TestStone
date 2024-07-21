@@ -12,14 +12,15 @@ body {
   transform: scale(0);
 }
 
-.card-enter-active, 
-.card-leave-active {
-  transition: all 0.5s;
+.tickets-move, 
+.tickets-enter-active,
+.tickets-leave-active {
+  transition: all 0.5s ease;
+  opacity: 0.5;
 }
 
-.card-enter, 
-.card-leave-to {
-  transform: translateY(50px);
+.tickets-enter-from,
+.tickets-leave-to {
   opacity: 0;
+  transform: translateX(30px);
 }
-
