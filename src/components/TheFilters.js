@@ -25,9 +25,10 @@ export default {
     <div
       class="filters__panel" 
       :class="{
-      'animate__animated animate__bounceInRight': isPanelOpen && !isPanelClosing,
-      'animate__animated animate__bounceOutRight': !isPanelOpen
+      'animate__animated animate__bounceInRight': isPanelOpen,
+      'animate__animated animate__bounceOutRight': isPanelClosing
     }"
+    @animationend="handleAnimationEnd"
       @click.self="closeFilters"
     >
       <div class="filters__panel-inner" >
@@ -68,7 +69,7 @@ export default {
       this.isPanelOpen = true;
     },
     closeFilters() {
-      this.isPanelOpen = false;
-    }
+      this.isPanelClosing = true;
+    },
   },
 };
