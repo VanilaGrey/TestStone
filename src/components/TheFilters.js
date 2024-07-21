@@ -5,32 +5,45 @@ export default {
   <form class="filters">
     <h2 class="visually-hidden">Фильтры.</h2>
 
-    <the-search class="filters__search" v-model="filters.search"></the-search>
-    <div>
-      <label class="filters__checkbox">
-        <input class="filter__input" type="checkbox" v-model="filters.oneWay">
-        <span class="icon-check">
-          <span class="path1"></span>
-          <span class="path2"></span>
-        </span>
+    <the-search
+      class="filters__search"
+      v-model="filters.search"
+      @update:model-value="toggleFilters"
+    ></the-search>
+    <div class="filters__checkbox">
+      <ui-checkbox
+        v-model="filters.oneWay"
+        @update:model-value="toggleFilters"
+      >
         Прямые
-      </label>
+      </ui-checkbox>
     </div>
     <button class="filters__button" type="button" @click="openFilters">
       Фильтр
       <span class="icon-filters"></span>
     </button>
-    <div id="filters-panel" class="filters__panel" :class="{ isPanelOpen: isPanelOpen }" @click="toggleFilters">
-      <button type="button" class="filters__close" @click="closeFilters">✖</button>
-      <label class="filters__panel-label" for="filter">Фильтр</label>
-      <input class="filters__panel-checkbox"
-             type="checkbox"
-             v-model="filters.bestPrice"
-             id="filter"
-            >
-      Лучшая цена
+    <div
+      class="filters__panel"
+      :class="{ 'filters__panel--open': isPanelOpen }"
+      @click.self="closeFilters"
+    >
+      <div class="filters__panel-inner">
+        <button
+          class="filters__close"
+          type="button"
+          @click="closeFilters" aria-label="Закрыть"> 
+           <span class="icon-close">
+           </span>
+        </button>
+        <p class="filters__panel-title">Фильтр</p>
+        <ui-checkbox
+          v-model="filters.bestPrice"
+          @update:model-value="toggleFilters"
+        >
+          Лучшая цена
+        </ui-checkbox>
+      </div>
     </div>
-    <div class="filters__overlay" :class="{ isPanelOpen: isPanelOpen }" @click="closeFilters"></div>
   </form>
   `,
   emits: ['filter'],

@@ -1,28 +1,15 @@
 .filters {
   display: flex;
   align-items: center;
+  gap: 2px;
 }
 
 .filters__checkbox {
   display: flex;
   align-items: center;
-  justify-content: center;
   background-color: #ffffff;
-  padding: 22px 22px 22px 42px;
-  margin-right: 2px;
-  margin-left: 2px;
+  padding: 20px 44px 20px 24px;
   border-radius: 4px;
-}
-
-.filter__input {
-  position: relative;
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  margin: 0 24px 0 0;
-  outline: none;
-  cursor: pointer;
-  appearance: none;
 }
 
 .filters__button {
@@ -41,64 +28,52 @@
 }
 
 .filters__panel {
-  display: none;
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 310px;
-  height: 100%;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: visibility 0s 0.6s, opacity 0.6s;
+}
+
+.filters__panel--open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+
+.filters__panel-inner {
+  width: 262px;
   padding: 24px;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-  z-index: 1000;
   color: #ffffff;
   background-color: #293553;
-  overflow: hidden;
-  transition: right, .3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.6s;
 }
 
-.filters__panel.isPanelOpen {
-  display: block;
-  transition: right, .3s ease;
+.filters__panel--open .filters__panel-inner {
+  transform: translateX(0%);
 }
 
-.filters__overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease;
-  z-index: 999;
-}
-
-.filters__overlay.isPanelOpen {
-  display: block;
-  opacity: 1;
-}
-
-
-.filters__panel-label {
-  display: flex;
+.filters__panel-title {
+  margin: 0 0 26px;
   font-weight: 700;
   font-size: 20px;
-  line-height: 140%;
-  margin-bottom: 26px;
-}
-
-.isPanelOpen {
-  display: block;
+  line-height: 1.4;
 }
 
 .filters__close {
-  background: none;
-  border: none;
-  font-size: 20px;
   position: absolute;
-  top: 16px;
+  top: 24px;
   right: 24px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
-  z-index: 20;
-  padding: 0px;
 }

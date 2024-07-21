@@ -12,6 +12,14 @@ body {
   transform: scale(0);
 }
 
-.no-scroll {
-  overflow: hidden;
+.card-enter-active, 
+.card-leave-active {
+  transition: all 0.5s;
 }
+
+.card-enter, 
+.card-leave-to {
+  transform: translateY(50px);
+  opacity: 0;
+}
+

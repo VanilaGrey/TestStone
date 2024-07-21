@@ -2,8 +2,12 @@ import { vueTemplate } from './utils.js';
 
 export default {
   template: vueTemplate`
-    <div class="search" :class="{ 'search--open': isOpened }">
-      <input type="search" name="search" class="search__input" placeholder="Авиакомпании" v-model="search" readonly>
+    <div
+      class="search"
+      :class="{ 'search--open': isOpened }"
+    >
+      <input type="search" name="search" class="search__input" placeholder="Авиакомпании" v-model="search" readonly
+     >
       <button class="search__button" type="button" @click="isOpened = !isOpened">
       <span class="icon-arrow"></span>
       </button>
@@ -26,6 +30,7 @@ export default {
       isOpened: false,
       options: [
         'Аэрофлот',
+        'NordStar',
         'S7 Airlines',
         'Уральские авиалинии',
         'Pobeda',

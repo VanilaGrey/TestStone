@@ -50,6 +50,11 @@
   width: 24px;
   height: 24px;
   background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.search__button:hover {
+  background-color: bisque;
 }
 
 .search__input {
