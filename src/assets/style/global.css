@@ -11,16 +11,3 @@ body {
   position: fixed;
   transform: scale(0);
 }
-
-.tickets-move, 
-.tickets-enter-active,
-.tickets-leave-active {
-  transition: all 0.5s ease;
-  opacity: 0.5;
-}
-
-.tickets-enter-from,
-.tickets-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
-}

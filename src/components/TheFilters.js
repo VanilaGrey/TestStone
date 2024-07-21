@@ -18,16 +18,19 @@ export default {
         Прямые
       </ui-checkbox>
     </div>
-    <button class="filters__button" type="button" @click="openFilters">
+    <button class="filters__button " type="button" @click="openFilters">
       Фильтр
       <span class="icon-filters"></span>
     </button>
     <div
-      class="filters__panel"
-      :class="{ 'filters__panel--open': isPanelOpen }"
+      class="filters__panel" 
+      :class="{
+      'animate__animated animate__bounceInRight': isPanelOpen && !isPanelClosing,
+      'animate__animated animate__bounceOutRight': !isPanelOpen
+    }"
       @click.self="closeFilters"
     >
-      <div class="filters__panel-inner">
+      <div class="filters__panel-inner" >
         <button
           class="filters__close"
           type="button"

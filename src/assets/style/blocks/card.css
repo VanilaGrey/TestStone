@@ -142,13 +142,3 @@
   line-height: 143%;
   text-align: center;
 }
-
-.section-enter-active,
-.section-leave-active {
-  transition: all 0.5s ease;
-}
-.section-enter-from,
-.section-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
-}

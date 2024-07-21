@@ -10,16 +10,16 @@ export default {
 				class="page__filters"
 				@filter="getCards"
 			></the-filters>
-			<TransitionGroup name="tickets" tag="section">
+			<transition-group name="tickets" tag="section">
 				<template v-if="tickets.length">
 					<ticket-card
 						class="page__card"
-						v-for="(ticket, i) in tickets"
-						:key="i"
+						v-for="ticket in tickets"
+						:key="ticket.flightNumber"
 						v-bind="ticket"
 					></ticket-card>
 				</template>
-			</TransitionGroup>
+			</transition-group>
 		</div>
 	`,
   data() {
