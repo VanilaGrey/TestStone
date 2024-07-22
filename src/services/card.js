@@ -10,7 +10,7 @@ export const getCards = async({
     }
 
     return data.filter((item) => {
-      const inSearch = !search || item.flightCompany === search;
+      const inSearch = !search || search === 'Все компании' || item.flightCompany === search;
       const inOneWay = !oneWay || item.arrival.date === item.departure.date;
       const inBestPrice = !bestPrice || item.isBestPrice;
       return inSearch && inOneWay && inBestPrice;

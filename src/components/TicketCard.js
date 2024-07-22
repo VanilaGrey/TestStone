@@ -61,9 +61,4 @@ export default {
     family: Object,
     Price: Number,
   },
-  methods: {
-    addCard() {
-      this.$emit('to-card', this.card)
-    },
-  },
 };
