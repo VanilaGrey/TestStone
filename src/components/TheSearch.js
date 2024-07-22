@@ -6,7 +6,7 @@ export default {
       class="search"
       :class="{ 'search--open': isOpened }"
     >
-      <input type="search" 
+      <input type="search"
              name="search"
              class="search__input"
              placeholder="Авиакомпании"
@@ -23,7 +23,7 @@ export default {
           v-for="option in options"
           :key="option"
           @click="onChange(option)"
-        >{{ option }}</li>
+        >{{ option || 'Все авиакомпании'}}</li>
       </ul>
     </div>
   `,
@@ -41,7 +41,7 @@ export default {
         'Уральские авиалинии',
         'Pobeda',
         'Россия',
-        'Все авиакомпании'
+        ''
       ]
     };
   },
