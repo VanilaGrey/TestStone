@@ -73,7 +73,6 @@
   align-items: center;
   margin-top: 7px;
   margin-right: 17px;
-
 }
 
 .card__flight {
@@ -123,6 +122,9 @@
 }
 
 .card__button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
   padding: 24px 16px;
   border-radius: 4px;
   font-weight: 700;

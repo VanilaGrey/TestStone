@@ -8,44 +8,47 @@ export default {
     <the-search
       class="filters__search"
       v-model="filters.search"
-      @update:model-value="toggleFilters"
+      @update:model-value="applyFilters"
     ></the-search>
     <div class="filters__checkbox">
       <ui-checkbox
         v-model="filters.oneWay"
-        @update:model-value="toggleFilters"
+        @update:model-value="applyFilters"
       >
         Прямые
       </ui-checkbox>
     </div>
-    <button class="filters__button" type="button" @click="openFilters">
+    <button class="filters__button" type="button" @click="toggleFilters">
       Фильтр
       <span class="icon-filters"></span>
     </button>
     <Transition
-      enter-active-class="animate__animated animate__fadeInRight"
-      leave-active-class="animate__animated animate__fadeOutRight"
+      enter-active-class="animate__animated animate__fadeIn"
+      leave-active-class="animate__animated animate__fadeOut"
     >
-      <div v-if="openFilters"
+      <div v-show="isPanelOpened"
         class="filters__panel"
-        :class="{  'filters__panel--open': isPanelOpen,
-                  'filters__panel--close': isPanelClose }"
-        @click.self="closedFilters"
+        @click.self="toggleFilters"
       >
-        <div class="filters__panel-inner" v-if="openFilters">
-          <button
-            class="filters__close icon-close"
-            type="button"
-            @click="closedFilters" aria-label="Закрыть">
-          </button>
-          <p class="filters__panel-title">Фильтр</p>
-          <ui-checkbox
-            v-model="filters.bestPrice"
-            @update:model-value="toggleFilters"
-          > 
-            Лучшая цена
-          </ui-checkbox>
-        </div>
+        <Transition
+          enter-active-class="animate__animated animate__fadeInRight"
+          leave-active-class="animate__animated animate__fadeOutRight"
+        >
+          <div class="filters__panel-inner" v-show="isPanelOpened">
+            <button
+              class="filters__close icon-close"
+              type="button"
+              @click="toggleFilters" aria-label="Закрыть">
+            </button>
+            <p class="filters__panel-title">Фильтр</p>
+            <ui-checkbox
+              v-model="filters.bestPrice"
+              @update:model-value="applyFilters"
+            >
+              Лучшая цена
+            </ui-checkbox>
+          </div>
+        </Transition>
       </div>
     </Transition>
   </form>
@@ -53,7 +56,7 @@ export default {
   emits: ["filter"],
   data() {
     return {
-      isPanelOpen: false,
+      isPanelOpened: false,
       isPanelClosed: true,
       filters: {
         search: "",
@@ -63,16 +66,11 @@ export default {
     };
   },
   methods: {
-    toggleFilters() {
+    applyFilters() {
       this.$emit("filter", this.filters);
     },
-    openFilters() {
-      this.isPanelOpen = true;
-      this.isPanelClosed = false;
-    },
-    closedFilters() {
-      this.isPanelClosed = true;
-      this.isPanelOpen = false;
+    toggleFilters() {
+      this.isPanelOpened = !this.isPanelOpened;
     },
   },
 };

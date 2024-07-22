@@ -6,7 +6,13 @@ export default {
       class="search"
       :class="{ 'search--open': isOpened }"
     >
-      <input type="search" name="search" class="search__input" placeholder="Авиакомпании" v-model="search" readonly
+      <input type="search" 
+             name="search"
+             class="search__input"
+             placeholder="Авиакомпании"
+             v-model="search"
+             @click="isOpened = !isOpened"
+             readonly
      >
       <button class="search__button" type="button" @click="isOpened = !isOpened">
       <span class="icon-arrow"></span>

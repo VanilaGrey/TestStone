@@ -10,13 +10,17 @@ export default {
 				class="page__filters"
 				@filter="getCards"
 			></the-filters>
-			<transition-group name="tickets" tag="section">
+			<transition-group name="tickets" tag="section"
+			     enter-active-class="animate__animated animate__flipInX"
+      			leave-active-class="animate__animated animate__flipOutX"
+			>
 				<template v-if="tickets.length">
 					<ticket-card
 						class="page__card"
 						v-for="ticket in tickets"
 						:key="ticket.flightNumber"
 						v-bind="ticket"
+						@choose="toCart(ticket)"
 					></ticket-card>
 				</template>
 			</transition-group>

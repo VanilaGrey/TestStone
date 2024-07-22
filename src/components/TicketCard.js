@@ -46,7 +46,7 @@ export default {
       </div>
     </div>
     <div class="card__pay">
-      <button class="card__button">Выбрать за {{ Price }} P</button>
+      <button class="card__button">Выбрать за {{ Price.toLocaleString('ru') }} P</button>
       <p class="card__description">Туда и обратно, 1 взрослый</p>
     </div>
     </section>
@@ -60,5 +60,10 @@ export default {
     arrival: Object,
     family: Object,
     Price: Number,
+  },
+  methods: {
+    addCard() {
+      this.$emit('to-card', this.card)
+    },
   },
 };
